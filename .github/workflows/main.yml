@@ -1,8 +1,10 @@
 name: CI
-
 on:
   pull_request:
-    branches: [ "master" ]
+    types:
+      - closed
+    branches:    
+      - '**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -15,7 +17,8 @@ env:
 
 jobs:
 
-  build:
+  build_and_push_to_dockerhub:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
