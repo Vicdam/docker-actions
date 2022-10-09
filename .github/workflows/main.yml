@@ -1,7 +1,11 @@
 name: Docker
 
 on:
-  pull_request
+  pull_request:
+    types:
+      - closed
+    branches:    
+      - '**'
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
