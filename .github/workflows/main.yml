@@ -18,7 +18,7 @@ env:
 jobs:
 
   build_and_push_to_dockerhub:
-    if: github.event.pull_request.merged == true
+    #if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
